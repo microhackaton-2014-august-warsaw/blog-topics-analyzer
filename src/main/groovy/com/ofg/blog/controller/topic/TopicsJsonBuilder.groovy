@@ -24,10 +24,5 @@ class TopicsJsonBuilder {
                 }""".toString()
     }
 
-    private static final String JSON_TOPIC_TEMPLATE = '''
-                {
-                    "name" : $topic
-                }
-                '''
-
+    private static final String JSON_TOPIC_TEMPLATE = '{"name" : $topic}'
 }
