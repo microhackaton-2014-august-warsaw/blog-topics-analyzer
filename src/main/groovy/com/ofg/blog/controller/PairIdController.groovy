@@ -22,7 +22,6 @@ class PairIdController {
 
     @Autowired private PropagationWorker propagationWorker
 
-    
     @RequestMapping(
             value = '{pairId}',
             method = PUT,
