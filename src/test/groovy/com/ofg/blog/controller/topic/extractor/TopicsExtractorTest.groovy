@@ -10,7 +10,7 @@ class TopicsExtractorTest extends Specification {
             String blogData = '''{
                 "rssUrl" : "http://tomaszdziurko.pl",
                 "pairId" : 1,
-                "posts" : ["Java jest super, piszemy dalej...", " Scala jest lepsza. Java ssie."]
+                "posts" : ["Java jest super, piszemy dalej...", " Scala jest lepsza. Java ssie."],
                 "titles" : ["Co robic, jak zyc?", "Java, Scala i kamieni kupa"]
             }'''
         when:
@@ -18,5 +18,8 @@ class TopicsExtractorTest extends Specification {
         then:
             extracted.blogId == "http://tomaszdziurko.pl"
             extracted.topics.size() == 5
+            extracted.topics.contains("java")
+            extracted.topics.contains("scala")
+            extracted.topics.contains("robic")
     }
 }
