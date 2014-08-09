@@ -35,6 +35,7 @@ class TopicsPropagatingWorker implements PropagationWorker {
     @Override
     void collectAndPropagate(long pairId, String blogData) {
         BlogWithTopics extractedData = topicsExtractor.extractFrom(blogData)
+        log.debug("Extracted data for blog=[$extractedData]")
         String jsonToPropagate = topicsJsonBuilder.buildTopicsJson(pairId, extractedData.blogId, extractedData.topics)
         restTemplate.postForObject("${serviceResolver.getUrl(COLLERATOR_DEPENDENCY_NAME).get()}/correlations",
                 jsonToPropagate, String)

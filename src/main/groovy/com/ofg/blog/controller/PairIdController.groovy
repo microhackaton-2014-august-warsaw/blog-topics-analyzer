@@ -30,6 +30,7 @@ class PairIdController {
     @ApiOperation(value = "Async collecting and propagating of blog data for a given pairId",
             notes = "This will handle topic extracting and pass results to Correlators")
     Callable<Void> getTopicsFromBlogData(@PathVariable @NotNull long pairId, @RequestBody @NotNull String blogData) {
+        log.debug("Got request with pairId=[$pairId]")
         propagationWorker.collectAndPropagate(pairId, blogData)
     }
 

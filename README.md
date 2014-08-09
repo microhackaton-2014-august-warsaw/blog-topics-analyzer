@@ -1,7 +1,7 @@
 blog-topics-analyzer
 =======================
 
-Twitter places analyzer, searches through tweets for places. Then analyzers send those to Collerator.
+Blog topics analyzer, tries to extract topics from blog posts, then sends those to Collerator.
 
 [API](https://github.com/microhackaton/2014/blob/master/APIs.md)
 
